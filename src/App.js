@@ -3,7 +3,7 @@ import './App.css';
 import Statistics from 'components/Statistics/Statistics';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Section from 'components/Section/Section';
-import Notification from 'components/Statistics/Notification';
+
 class App extends Component {
   state = {
     good: 0,
@@ -32,8 +32,6 @@ class App extends Component {
           <FeedbackOptions onLeaveFeedback={this.handleAddFeadback} />
         </Section>
         <Section title="Statistics">
-        <Notification message="No feedback given" />
-        </Section>
           <Statistics
             good={good}
             neutral={neutral}
@@ -41,6 +39,7 @@ class App extends Component {
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
+        </Section>
       </>
     );
   }

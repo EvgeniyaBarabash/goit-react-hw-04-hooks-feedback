@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Notification=({message})=>{
-return <p>{message}</p>
+const Notification = ({ message }) => {
+  return <p>{message}</p>;
 };
 export default Notification;
