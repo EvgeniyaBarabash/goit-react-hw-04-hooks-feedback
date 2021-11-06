@@ -10,10 +10,8 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  handleAddFeadback = ({ currentTarget }) => {
-    this.setState(prevState => ({
-      [currentTarget.name]: prevState[currentTarget.name] + 1,
-    }));
+  handleAddFeadback = option => {
+    this.setState({ [option]: this.state[option] + 1 });
   };
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -29,7 +27,10 @@ class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleAddFeadback} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.handleAddFeadback}
+          />
         </Section>
         <Section title="Statistics">
           <Statistics
